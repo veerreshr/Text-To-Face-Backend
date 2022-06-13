@@ -8,7 +8,7 @@ from consts import ModelSize
 
 app = Flask(__name__)
 CORS(app)
-print("--> Starting DALL-E Server. This might take up to two minutes.")
+print("--> Starting Server. This might take up to two minutes.")
 
 from dalle_model import DalleModel
 dalle_model = None
@@ -60,9 +60,9 @@ with app.app_context():
         dalle_version = ModelSize.MINI
     dalle_model = DalleModel(dalle_version)
     dalle_model.generate_images("warm-up", 1)
-    print("--> DALL-E Server is up and running!")
+    print("--> Server is up and running!")
     print(f"--> Model selected - DALL-E {dalle_version}")
 
 
 if __name__=='__main__':
-    app.run()
+    app.run(host="0.0.0.0", port=int(sys.argv[1]), debug=False)
