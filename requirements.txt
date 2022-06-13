@@ -1,0 +1,8 @@
+Flask
+Flask-Cors
+Flask-RESTful
+git+https://github.com/huggingface/transformers.git
+git+https://github.com/patil-suraj/vqgan-jax.git
+git+https://github.com/borisdayma/dalle-mini.git
+tqdm
+flax
