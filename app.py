@@ -14,8 +14,7 @@ from dalle_model import DalleModel
 dalle_model = None
 
 
-@app.route("/dalle", methods=["POST"])
-@cross_origin()
+@app.route("/dalle", methods=['POST'])
 def generate_images_api():
     """Generates Images from given text
 
@@ -48,7 +47,6 @@ def generate_images_api():
 
 
 @app.route("/", methods=["GET"])
-@cross_origin()
 def health_check():
     return jsonify(success=True)
 
